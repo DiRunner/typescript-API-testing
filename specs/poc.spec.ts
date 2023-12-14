@@ -5,7 +5,6 @@ describe("POC Test", () => {
   describe("GET request", () => {
     it("GET /posts", async () => {
       const res = await request.get("/posts");
-      //console.log(res);
       expect(res.statusCode).toBe(200);
       expect(res.body[0].id).toBe(1);
     });
@@ -15,8 +14,6 @@ describe("POC Test", () => {
       const res = await request
         .get("/comments")
         .query({ postId: 1, limit: 10 });
-
-      console.log(res);
 
       expect(res.body[0].postId).toBe(1);
     });
@@ -46,7 +43,6 @@ describe("POC Test", () => {
 
       const getRes = await request.get("/posts/1");
       const beforeTitle = getRes.body.title;
-      console.log(beforeTitle);
 
       const res = await request.put("/posts/1").send(data);
 
@@ -59,14 +55,13 @@ describe("POC Test", () => {
   });
 
   describe("PATCH /post", () => {
-    it.only("PATCH /post", async () => {
+    it("PATCH /post", async () => {
       const data = {
         title: "Updated title",
       };
 
       const getRes = await request.get("/posts/1");
       const beforeTitle = getRes.body.title;
-      console.log(beforeTitle);
 
       const res = await request.patch("/posts/1").send(data);
 
@@ -79,7 +74,7 @@ describe("POC Test", () => {
   });
 
   describe("DELETE /post", () => {
-    it.only("DELETE /post", async () => {
+    it("DELETE /post", async () => {
       const res = await request.delete("/posts/1");
       expect(res.statusCode).toBe(200);
       expect(res.body).toEqual({});

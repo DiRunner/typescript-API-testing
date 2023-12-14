@@ -14,7 +14,6 @@ describe("Upload File", () => {
       "data/cerati.jpeg",
     ];
     const res = await controller.postUploadMultiple(files);
-    console.log(res.body);
     expect(res.body.length).toBe(4);
     expect(res.body[0].filename).toEqual("milei.jpg");
     expect(res.body[1].filename).toEqual("spider.jpeg");
