@@ -1,0 +1,22 @@
+{
+  "name": "typescript-api-testing",
+  "version": "1.0.0",
+  "description": "api test automation project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Diego Corredor",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.4.0",
+    "jest-html-reporters": "^3.1.5",
+    "jest-junit": "^16.0.0",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.1.1"
+  },
+  "dependencies": {
+    "@types/jest": "^29.4.0",
+    "@types/supertest": "^2.0.16"
+  }
+}
